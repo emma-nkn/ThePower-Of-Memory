@@ -1,95 +1,278 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-shadow: border-box;
-}
-body{
-    font-family: "Poppins", sans-serif;
-    color: rgb(255, 255, 255);
-    margin: 0px 50px;
-    background-color: rgb(11, 1, 34);
-}
-.title1{
-    text-align: center;
-    margin: 50px 0px;
-    
-}
-.maps{
-    text-align: center;
-    margin: 50px 0px;  
-}
-.maps figure{
-    margin: 20px 50px;
-}
-.maps img{
-    width: 100%;
-    height: 500px;
+/* Définition des variables */
+:root {
+  --color-background: rgb(11, 1, 34);
+  --color-white: rgb(255, 255, 255);
+  --color-primary: #e87d0e; /* Orange */
+  --color-secondary: #019adc; /* Bleu */
+  --color-input-bg: #211c40; /* Fond foncé pour les inputs */
+  --color-border: #3a3260; /* Bordure des inputs */
+  --spacing-md: 30px;
 }
 
-/* contact session */
-.contact{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    
+/* Base et réinitialisation */
+* {
+  padding: 0;
+  margin: 0;
+  /* CORRECTION : Utiliser box-sizing: border-box; */
+  box-sizing: border-box;
 }
-.contact hr{
-    height: 80px;
-}
-.contact .Location{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-.contact .Location i{
-    font-size: 35px;
-    color: white;
-}
-.contact .Location p{
-    font-size: 15px;
-    font-weight: 200;
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-white);
+  /* Retiré la marge latérale du body pour gérer la largeur avec max-width */
+  margin: 0;
+  background-color: var(--color-background);
 }
 
-/* contact session */
-.contact_fr{
-    border: 2px solid red;
-    margin: 50px 0px;
-    text-align: center;
+/* ---------------------------------------------------- */
+/* 1. SECTION TITRE (title1) */
+/* ---------------------------------------------------- */
+.title1 {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.contact_fr .title_info{
-    margin: 30px 0px;
+.title1 h2 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-.contact_fr .title_info h2{
-    font-size: 40px;
-    font-weight: 400;
+.title1 h4 {
+  font-size: 16px;
+  font-weight: 300;
+  opacity: 0.8;
 }
-.contact_fr .title_info p{
-    font-size: 11px;
-    line-height: 1.4;
+
+/* ---------------------------------------------------- */
+/* 2. SECTION CARTE (maps) */
+/* ---------------------------------------------------- */
+.maps {
+  text-align: center;
+  margin: 0px 50px var(--spacing-md) 50px;
 }
-.contact_fr form input{
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
+.maps figure {
+  margin: 0; /* Supprimer la marge par défaut */
 }
-.contact_fr form .info_col1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.maps img {
+  width: 80%;
+  max-width: 1200px; /* Limiter la taille max de l'image */
+  height: auto; /* Rendre la hauteur automatique pour la réactivité */
+  min-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
 }
-.contact_fr form .info_col1 div{
-    display: flex;
+
+/* ---------------------------------------------------- */
+/* 3. SECTION INFORMATIONS DE CONTACT (contact) */
+/* ---------------------------------------------------- */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  padding: var(--spacing-md) 20px;
+  margin-bottom: 50px;
+}
+
+/* Séparateurs verticaux */
+.contact hr {
+  height: 60px; /* Réduit un peu la hauteur */
+  width: 1px;
+  border: none;
+  background-color: rgba(255, 252, 252, 0.2);
+}
+
+/* Styles pour tous les blocs d'infos */
+.contact .media,
+.contact .number_phone,
+.contact .Location {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Media (Réseaux sociaux) */
+.contact .media {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.contact .media p {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+.contact .media_icons a i {
+  font-size: 28px;
+  margin-right: 10px;
+  color: var(--color-white);
+  transition: color 0.3s;
+}
+.contact .media_icons a:hover i {
+  color: var(--color-secondary);
+}
+
+/* Téléphone et Localisation */
+.contact .number_phone i,
+.contact .Location a i {
+  font-size: 25px;
+  color: var(--color-secondary);
+}
+.contact .number_phone p,
+.contact .Location p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------- */
+/* 4. SECTION FORMULAIRE (contact_fr) */
+/* ---------------------------------------------------- */
+.contact_fr {
+  max-width: 700px; /* Limiter la largeur du formulaire */
+  margin: 0 auto 80px auto;
+  padding: 20px;
+  text-align: center;
+  /* background-color: #1c0f3c; Optionnel: pour encadrer le formulaire */
+  border-radius: 10px;
+  /* border: 2px solid red; REMPLACÉ par la ligne ci-dessous */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact_fr hr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--spacing-md);
+}
+
+.contact_fr .title_info {
+  margin-bottom: 30px;
+}
+.contact_fr .title_info h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+.contact_fr .title_info p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* FORMULAIRE - STRUCTURE */
+.contact_fr form {
+  width: 100%;
+  text-align: left; /* Alignement du formulaire à gauche */
+}
+.contact_fr form > div {
+  margin-bottom: 20px;
+}
+
+/* Champs Nom et Prénom (sur la même ligne) */
+.contact_fr form .info_col1 {
+  display: flex;
+  gap: 30px;
+}
+.contact_fr form .info_col1 div {
+  flex-grow: 1; /* Permet aux deux champs de prendre 50% de la largeur */
+}
+
+.contact_fr form label {
+  display: block;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+/* Styles des Inputs et Textarea */
+.contact_fr form input[type="text"],
+.contact_fr form input[type="email"],
+.contact_fr form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background-color: white;
+  color: var(--color-white);
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  /* Assurez-vous que le placeholder est lisible */
+}
+
+.contact_fr form input:focus,
+.contact_fr form textarea:focus {
+  border-color: var(--color-secondary);
+  outline: none;
+}
+
+/* Bouton d'envoi */
+.contact_fr button {
+  /* Style dégradé pour le bouton (réutilise le style de la page jeu) */
+  background-color: #d80027;
+  color: var(--color-white);
+  padding: 14px 40px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.contact_fr button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVE */
+/* ---------------------------------------------------- */
+
+@media (max-width: 900px) {
+  /* Ajustement de la marge de la carte */
+  .maps {
+    margin: 0px 20px var(--spacing-md) 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Info de contact s'empile verticalement */
+  .contact {
     flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  /* Cacher les séparateurs verticaux */
+  .contact hr {
+    display: none;
+  }
+
+  .contact .media {
+    align-items: center; /* Centrer les icônes */
+  }
 }
-.contact_fr hr{
-    width: 100%; 
-    height: 0.5px;
-    color: white;
-    background-color: white; 
-}
-.title1{
-    
+
+@media (max-width: 600px) {
+  .title1 h2 {
+    font-size: 26px;
+  }
+
+  .contact_fr .title_info h2 {
+    font-size: 30px;
+  }
+
+  /* Les deux champs Nom/Prénom passent sur deux lignes */
+  .contact_fr form .info_col1 {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact_fr form .info_col1 div {
+    width: 100%;
+  }
 }
