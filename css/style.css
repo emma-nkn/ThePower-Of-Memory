@@ -1,290 +1,572 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-shadow: border-box;
-}
-body{
-    font-family: "Poppins", sans-serif;
-    color: rgb(255, 255, 255);
-    margin: 0px 50px;
-    background-color: rgb(11, 1, 34);
+*/ :root {
+  /* Couleurs principales basées sur votre code */
+  --color-background: rgb(11, 1, 34); /* Violet/Noir foncé */
+  --color-primary: #e87d0e; /* Orange */
+  --color-secondary: #019adc; /* Bleu Stats */
+  --color-red: #d80027; /* Rouge Stats */
+  --color-white: #ffffff;
+  --color-light-blue: rgb(122, 226, 245); /* Bleu du cercle autour de l'image */
+  /* 
+    Espacements basés sur une grille de 8px (ex: 8px, 16px, 24px, 32px, etc.) 
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 32px;
+    --spacing-lg: 64px;
+    --spacing-xl: 96px; */
+
+  /* Typographie */
+  --font-family-primary: "Poppins", sans-serif;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-shadow: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: rgb(255, 255, 255);
+  /* margin: 0px 60px; */
+  background-color: rgb(11, 1, 34);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Conteneur principal (pour remplacer le margin du body) */
+.container {
+  /* max-width: 1200px;  */
+  padding: 0 20px; /* Padding sur les côtés pour les petits écrans */
+}
+
+/* Styles pour les boutons réutilisables */
+.cta-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.primary-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  width: 195px; /* Gardé, mais attention à la rigidité */
+  text-align: center;
+  display: inline-block; /* Pour appliquer les propriétés de bloc à l'ancre <a> */
+}
+/*
+  ======================================================
+  1. HEADER (main-header) - AJUSTEMENTS
+  ======================================================
+*/
+.main-header {
+  width: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Remplacement des variables par des valeurs claires si les variables ne sont pas définies */
+  padding: 10px;
+  /* Utilisation d'un conteneur pour centrer le contenu du header si besoin
+       max-width: 1200px;
+       margin: 0 auto; */
+}
+
+.main-header .logo img {
+  background-color: white;
+  max-height: 50px; /* Taille du logo */
+  width: auto;
+}
+
+.main-nav .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 48px; /* Augmenté l'espacement pour correspondre souvent aux maquettes de bureau (8px * 6) */
+}
+
+/* Le bouton CTA étant une <a> avec une classe cta-button, ce sélecteur est correct */
+.main-nav .cta-button {
+  padding: 10px 15px;
+  background-color: var(
+    --color-red,
+    #d80027
+  ); /* Utiliser une valeur par défaut si la variable manque */
+  color: var(--color-white, #ffffff);
+  border-radius: 6px;
+}
+
+/*
+  ======================================================
+  2. SECTION HÉROS (hero-section) - AJUSTEMENTS
+  ======================================================
+*/
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Ajustement de l'espacement vertical pour le bureau */
+  padding: 50px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Retrait des padding-left/right séparés, le padding du header suffit */
+}
+
+.hero-content {
+  width: 55%;
+  padding-right: 30px;
+}
+.hero-content .tagline {
+  color: #e87d0e;
+  font-weight: 700;
+  font-size: 20px;
+}
+.hero-content .description {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 50px 0px;
+}
+.hero-content .cta-button {
+  padding: 15px 25px;
+  font-size: 20px;
+  border-radius: 40px;
+  margin-top: 50px;
+  background: linear-gradient(90deg, #fb9e3c, #d80027);
+}
+
+.main-title {
+  font-size: 46px;
+  font-weight: 700;
+  margin: 32px 0;
+  line-height: 1.2;
+}
+
+.hero-image {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px; /* Garder une taille maximale pour le bureau */
+  border-radius: 50%;
+  /* Remplacement par des valeurs concrètes (fallback) */
+  border: 10px solid var(--color-light-blue, rgb(122, 226, 245));
+}
 /*{}*/
+/*
+  ======================================================
+  3. SECTION game
+  ======================================================
+*/
+.game_type {
+  margin: 80px 40px;
+}
+.game_type h4 {
+  font-size: 20px;
+}
+.game_type .picture_block {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13.5rem;
+}
+.game_type .picture_block figure img {
+  width: 250px;
+  border-radius: 15px;
+}
+.game_type .picture_block figure figcaption {
+  padding: 10px 40px;
+}
 
-.introduce_space{
-    margin-top: 30px;
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
+/*
+  ======================================================
+  4. SECTION TITRE
+  ======================================================
+*/
+.title3 {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.introduce_space .introduce_text{
-    margin-top: 70px;
-    width: 600px;
-    height: auto;
-    z-index: 1;
+.title3 p {
+  max-width: 800px;
+  font-size: 35px;
+  font-weight: 400;
+  text-align: center;
 }
-.introduce_space .introduce_text h4{
-    color:#E87D0E ;
-    font-size: 18px;
+/*
+  ======================================================
+  5. SECTION TEAMGAME
+  ======================================================
+*/
+.teamgame {
+  margin: 0px 60px;
 }
-.introduce_space .introduce_text h2{
-    font-size: 44px;
-    margin: 50px 0px;
-    line-height: 1.6;
-    width: 600px;
+.teamgame h2 {
+  margin: 0px 18px;
 }
-.introduce_space .introduce_text button{
-    margin: 50px 0px;
-    background-color: #E87D0E;
-    padding: 10px;
-    border-radius: 40px;
-    font-size: 20px;
-    width: 195px;
-
+.teamgame p {
+  margin: 0px 18px;
+  max-width: 500px;
+  padding-top: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 16px;
 }
-.introduce_space .gamepicture img{
-    position: absolute;
-    top: 6%;
-    left: 35%;
-    width: 500px;
-    border-radius: 50%;
-    border: 10px solid rgb(122, 226, 245);
-}
-.game_type{
-    margin: 80px 0px;
-}
-.game_type h4{
-    font-size: 20px;
-}
-.game_type .picture_block{
-    margin: 50px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.game_type .picture_block figure img{
-    width: 250px;
-    border-radius: 15px;
-}
-.game_type .picture_block figure figcaption{
-    padding: 10px 40px;
-}
-.title3{
-    margin: 50px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.title3 p{
-    font-size: 40px;
-    text-align: justify;
-}
-.teamgame p{
-    max-width: 400px;
-    padding-top: 20px;
-    line-height: 1.5;   
-}
-#gamepicture figure img{
-    margin: 30px 0px;
-    width: 100%;
+#gamepicture figure img {
+  margin: 30px 0px;
+  width: 100%;
 }
 #gamepicture {
-    position: relative;
+  position: relative;
+  margin: 20px 60px;
 }
 
 .color-grid {
-    display: grid;
-    grid-template-columns: repeat(10, 3px);
-    gap: 1.2rem;
-    list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(10, 3px);
+  gap: 1.2rem;
+  list-style-type: none;
 
-    position: absolute;
-    right: 50px;
-    top: -50px;
+  position: absolute;
+  right: 50px;
+  top: -50px;
 }
 .color-grid li {
-    background-color: red;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
+  background-color: red;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
 }
 
-/* User account section */
+/*
+  ======================================================
+  STATISTIQUES UTILISATEUR (spaceuser) - COULEURS UNIQUES
+  ======================================================
+*/
 
-.spaceuser{
-    padding: 8%;
-    height: 100%;
-    background-image: url("../assets/game_icones/starts.png"); 
-    background-size: cover;      
-    background-repeat: no-repeat; 
-    background-position: center;
-}
-.spaceuser h2{
-    text-align: center;
-    letter-spacing: 0%;
-    font-size: 30px;
-}
-.spaceuser .para1{
-    padding: 10px 75px;
-    text-align: center;
-    margin-top: 1%;
-    font-size: 20px;
-}
-.spaceuser h3{
-    font-size: 40px;
-    text-align: center;
-    /* border: solid 2px red; */
-}
-.spaceuser .block{
-    position: relative;
-    margin: 40px 0px;
-    display: flex;
-    justify-content: center;
-    gap: 10%;
-    align-items: center;
-    text-align: center;
-}
-.spaceuser .block p{
-    font-size: 12px;
-    width: 120px;
-    padding: none;
+/* Conteneur de la section */
+.spaceuser {
+  padding: 50px 10px;
+  /* padding: var(--spacing-lg) 20px; */
+
+  /* Styles de l'image de fond */
+  background-image: url("../assets/game_icones/starts.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  text-align: center;
 }
 
-.spaceuser .block .spaceuser_blok2{
-    width: 123px;
-    height: 40px;
-    padding: 20px;
-    background-color: white;
-    color: black;
-    text-align: center;
+/* Titres et paragraphes */
+.spaceuser h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.spaceuser .block .spaceuser_blok1{
-    width: 123px;
-    height: 40px;
-    padding: 20px;
-    background-color: #019ADC;
-    text-align: center;
+
+.spaceuser .para1 {
+  padding: 20px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  /* max-width: 700px; */
+  text-align: center;
+  margin: 0 auto var(--spacing-md) auto;
 }
-.spaceuser .block .spaceuser_blok2a{
-    width: 123px;
-    height: 40px;
-    padding: 20px;
-    text-align: center;
-    background-color: #D80027;
+
+/* Conteneurs des lignes de blocs (vos deux div class="block") */
+.spaceuser .block {
+  display: flex;
+  justify-content: center; /* Centre les blocs dans leur ligne */
+  align-items: stretch; /* Assure que tous les blocs ont la même hauteur */
+  gap: 70px; /* Espace entre les blocs */
+  margin: 40px auto;
 }
-.spaceuser .block .spaceuser_blok3{
-    width: 123px;
-    height: 40px;
-    padding: 20px;
-    text-align: center;
-    background-color: #E87D0E;
+
+/* Styles pour tous les blocs de statistiques */
+.spaceuser .block > div {
+  /* Dimensions pour l'aspect "bloc" */
+  width: 160px;
+  /* min-height: 20px;  Utiliser min-height pour plus de flexibilité  */
+  height: 80px;
+  padding: 15px 12px;
+  border-radius: 5px;
+
+  /* Disposition interne (pour centrer le texte h3/p verticalement) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
-.spaceuser .block .spaceuser_blok3 h3{
-    /* position: absolute;
-    top: 10%;
-    right: 25%; */
-    
+
+/* Effet simple au survol */
+.spaceuser .block > div:hover {
+  transform: translateY(-5px);
+}
+
+.spaceuser h3 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.spaceuser .block p {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.2;
+}
+
+/* COULEURS DES BLOCS */
+
+/* Bloc 1: Parties jouées (Bleu) */
+.spaceuser_blok1 {
+  background-color: var(--color-secondary, #019adc);
+  color: var(--color-white);
+}
+
+/* Bloc 2: Joueurs connectés (Blanc) */
+.spaceuser_blok2 {
+  background-color: var(--color-white, #ffffff);
+  color: var(
+    --color-background,
+    rgb(11, 1, 34)
+  ); /* Texte foncé pour fond clair */
+}
+
+/* Bloc 3: Temps records (Orange) */
+.spaceuser_blok3 {
+  background-color: var(--color-primary, #e87d0e);
+  color: var(--color-white);
+}
+
+/* Bloc 4: Joueurs inscrits (Rouge) */
+.spaceuser_blok2a {
+  background-color: var(--color-red, #d80027);
+  color: var(--color-white);
+}
+
+/*
+  ======================================================
+  MEDIA QUERIES - RESPONSIVE pour les statistiques
+  ======================================================
+*/
+
+/* TABLETTE (max-width: 992px) */
+@media (max-width: 992px) {
+  .spaceuser .block {
+    gap: 20px;
+  }
+}
+
+/* MOBILE (max-width: 700px) */
+@media (max-width: 700px) {
+  /* Les deux conteneurs de blocs s'enroulent si l'espace manque */
+  .spaceuser .block {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .spaceuser .block > div {
+    /* Prend presque la moitié de la largeur du parent, moins le gap */
+    width: calc(50% - 10px);
+    min-height: 120px;
+    padding: 15px;
+  }
+
+  .spaceuser h3 {
+    font-size: 32px;
+  }
+}
+
+/* TRÈS PETIT MOBILE (max-width: 450px) */
+@media (max-width: 450px) {
+  .spaceuser .block > div {
+    /* Prend toute la largeur pour éviter un défilement horizontal */
+    width: 80%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
 }
 /* team section */
-.team_block{
-   margin: 40px 0px;
+.team_block {
+  margin: 40px 60px;
 }
-.team_block .block_title{
-   text-align: center;
+.team_block .block_title {
+  text-align: center;
 }
-.team_block .block_title p{
-   margin-top: 15px;
-   font-size: 14px;
-   line-height: 188%;
+.team_block .block_title p {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 188%;
 }
-.team_block .team_block_image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
+.team_block .team_block_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.team_block .team_block_image{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.team_block .team_block_image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.team_block .team_block_image2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.team_block .team_block_image2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
-.team_block .team_block_image{
-    padding-top: 50px;
+.team_block .team_block_image {
+  padding-top: 50px;
 }
-.team_block div img{
-    width: 352px;
-    height: 223px;
-    border-radius: 20px;
+.team_block div img {
+  width: 352px;
+  height: 223px;
+  border-radius: 20px;
 }
-.team_block div figcaption{
-    align-items: center;
-    margin: 10px;
-}
-
-.team_block{
-   
+.team_block div figcaption {
+  align-items: center;
+  margin: 10px;
 }
 
-.news{
-   
+/* .team_block {
+} */
+.news {
+  margin: 20px 60px;
 }
-.news .info_block{
-    padding: 50px;
-    border-radius: 15px;
-    background-color: white;
-    color: black;
-    display: flex;
-    justify-content: space-between;
+.news .info_block {
+  margin: 50px 0px;
+  padding: 50px;
+  border-radius: 15px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
 }
-.news .info_block .address_block0{
-    width: 500px;
+.news .info_block .address_block0 {
+  width: 500px;
 }
-.news .news_texte{
-    width: 400px;
-    margin: 20px 0px;
+.news .news_texte {
+  width: 400px;
+  margin: 20px 0px;
 }
-.info_block .address_block0 p{
-    margin-top: 20px;
+.info_block .address_block0 p {
+  margin-top: 20px;
 }
-.news .info_block .address_block{
-    margin-top: 20px;
-    position: relative;
-    background-color: black;
-    color: white;
-    border-radius: 8px;
-    /* padding: 0px 6px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 350px;
+.news .info_block .newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  margin-top: 50px;
+  height: 25px;
+  padding: 10px 0px;
+  width: 420px;
+  border-radius: 8px;
+  background-color: black;
 }
-.info_block .address_block p{
-    position: relative;
-    right: 23%;
-    opacity: 20%;
+.info_block .newsletter-form input {
+  margin: 0px 5px;
+  border: none;
+  color: white;
+  opacity: 35%;
+  padding: 10px 20px;
+  background-color: black;
+  width: 200px;
 }
-.news .info_block .address_block button{
-    position: absolute;
-    right: 3%;
-    color: white;
-    background-color: #D80027;
-    text-decoration: none;
-    /* padding: 8px 12px; */
-    border: none;
-    border-radius: 8px;
-    width: 95px;
-    height: 30px;
+.info_block .newsletter-form button {
+  background-color: #d80027;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin: 4px 10px;
+  padding: 10px 25px;
+}
 
+/*
+  ======================================================
+  10. FOOTER (main-footer)
+  ======================================================
+*/
+.main-footer {
+  color: black;
+  background-color: white;
+  padding: 50px 35px;
 }
-.team_block{
-   
+
+.footer-content-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Pour le responsive */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1; /* Permet aux colonnes de prendre de l'espace */
+  min-width: 180px; /* Taille minimale pour ne pas avoir de colonnes trop serrées */
+}
+
+.footer-logo img {
+  max-height: 40px;
+  margin-bottom: 15px;
+}
+
+.col-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+
+.social-media-links {
+  display: flex;
+  gap: 15px;
+  /* Ajuster si le titre n'est pas nécessaire pour cette colonne */
+}
+
+.social-media-links a {
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-media-links a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: var(--spacing-md) auto 0 auto;
+  padding: 0 20px;
+}
+
+.footer-bottom hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: var(--spacing-sm) 0;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
 }

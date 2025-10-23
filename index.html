@@ -8,58 +8,73 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/header.css" />
   </head>
   <body>
-    <header id="header">
+    <header id="header" class="main-header">
       <div class="logo">
-        <figure><img src="assets/game_icones/logo.png" alt="logo" /></figure>
+        <a href="/">
+          <img
+            src="assets/game_icones/logo.png"
+            alt="Logo The Power of Memory"
+          />
+        </a>
       </div>
-      <div class="navigation">
-        <ul>
-          <li><a href="">Accueil</a></li>
-          <li><a href="">Scores</a></li>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#intro">Accueil</a></li>
+          <li><a href="#scores">Scores</a></li>
+          <li>
+            <a href="#contact" class="cta-button">Nous contacter</a>
+          </li>
         </ul>
-        <button>Nous contacter</button>
-      </div>
+      </nav>
     </header>
-    <section class="introduce_space">
-      <div class="introduce_text">
-        <h4>The power of memory</h4>
-        <h2>
+    <section id="intro" class="hero-section">
+      <div class="hero-content">
+        <h4 class="tagline">The power of memory</h4>
+        <h1 class="main-title">
           Choisis un thème et commence l'aventure avec tes potes, <br />
           simple et pratique
-        </h2>
-        <p>
-          Découvrez les meilleurs jeu de mémorisation qui booste ton cerveau
+        </h1>
+        <p class="description">
+          Découvrez les meilleurs jeux de mémorisation qui boostent ton cerveau
           tout en t'amusant. Retourne les cartes, trouve les paires… et entraîne
           ta mémoire.
         </p>
-        <button class="btn_one">Commencer</button>
+        <a href="#jeux" class="cta-button">Commencer !</a>
       </div>
-      <figure class="gamepicture">
-        <img src="assets/game_icones/game_i2.jpg" alt="image icone jeu" />
+      <figure class="hero-image">
+        <img
+          src="assets/game_icones/game_i2.jpg"
+          alt="Illustration de jeu de mémoire sur tablette"
+        />
       </figure>
     </section>
     <section class="game_type">
       <h4>Nos jeux</h4>
       <div class="picture_block">
         <figure>
-          <img src="assets/game_icones/memory.png" alt="image jeu de mémoire" />
+          <img src="assets/game_icones/table.jpg" alt="image jeu de mémoire" />
           <figcaption>Power Of Memory</figcaption>
         </figure>
         <figure>
           <img
-            src="assets/game_icones/puzzl.png"
+            src="assets/game_icones/manette.jpg"
             alt="image jeu de Puzzle glissant"
           />
           <figcaption>Puzzle glissant</figcaption>
         </figure>
         <figure>
           <img
-            src="assets/game_icones/quiz.png"
+            src="assets/game_icones/manette.jpg"
             alt="image jeu de Quiz rapide"
           />
           <figcaption>Quiz Rapide</figcaption>
@@ -67,10 +82,7 @@
       </div>
     </section>
     <section class="title3">
-      <p>
-        Choisis ton thème préféré, lance toi dans une partie. <br />
-        Et go...
-      </p>
+      <p>Choisis ton thème préféré, lance toi dans une partie. Et go...</p>
     </section>
     <section class="teamgame">
       <h2>Jouer en equipe</h2>
@@ -171,12 +183,12 @@
     <section class="spaceuser">
       <h2>
         Ton tableau de bord personnel pour suivre performances et progrès
-        mémoire. <br />
-        Suis et améliore tes scores.
+        mémoire. Suis et améliore tes scores.
       </h2>
       <p class="para1">
         Crée ton compte, défie tes amis, progresse chaque jour et deviens le
-        champion de la mémoire grâce à ton tableau de suivi personnalisé
+        champion de la mémoire <br />
+        grâce à ton tableau de suivi personnalisé
       </p>
       <div class="block">
         <div class="spaceuser_blok1">
@@ -259,11 +271,70 @@
             exclusives
           </p>
         </div>
-        <div class="address_block">
-          <p>Adresse email</p>
-          <button>Valider</button>
-        </div>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            placeholder="Adresse email"
+            name="email"
+            required
+          />
+          <button type="submit" class="submit-button">Valider</button>
+        </form>
       </div>
     </section>
+    <footer id="pied_de_page" class="main-footer">
+      <div class="footer-content-container">
+        <div class="footer-col logo-column">
+          <a href="/" class="footer-logo">
+            <img
+              src="assets/game_icones/logo.png"
+              alt="Logo The Power of Memory"
+            />
+          </a>
+          <p>
+            Quam ob rem id primum videamus, progredi debeat. Numne, si Cors,
+            ferre contra patriam arma illi cum Coriolano
+          </p>
+        </div>
+
+        <nav class="footer-col footer-nav">
+          <h2 class="col-title">Menu</h2>
+          <ul>
+            <li><a href="#intro">Accueil</a></li>
+            <li><a href="#scores">Scores</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col footer-contact">
+          <h2 class="col-title">Contactez-nous</h2>
+          <p>
+            si placet, quatenus amor in <br />
+            amicitia progredi debeat.
+          </p>
+          <a href="mailto:contact@web.com">contact@web.com</a>
+        </div>
+
+        <div class="footer-col social-media-links">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <hr />
+        <p class="copyright">Copyright ® 2025 LOGO All rights Reserved</p>
+      </div>
+    </footer>
   </body>
 </html>
