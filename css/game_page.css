@@ -1,0 +1,207 @@
+*/ :root {
+  /* Couleurs principales basées sur votre code */
+  --color-background: rgb(11, 1, 34); /* Violet/Noir foncé */
+  --color-primary: #e87d0e; /* Orange */
+  --color-secondary: #019adc; /* Bleu Stats */
+  --color-red: #d80027; /* Rouge Stats */
+  --color-white: #ffffff;
+  --color-light-blue: rgb(122, 226, 245);
+
+  /* Typographie */
+  --font-family-primary: "Poppins", sans-serif;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: rgb(11, 1, 34);
+}
+
+/*
+  ======================================================
+  title_section
+  ======================================================
+*/
+.title_section {
+  text-align: center;
+}
+.choise_user {
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-end; ceci aligne le bouton avec les inputs. */
+  align-items: flex-end;
+  gap: 30px;
+  padding: 20px;
+  margin: 20px 0px;
+}
+
+.choise_user div {
+  /* fait du div une colonne */
+  display: flex;
+  flex-direction: column;
+}
+
+.choise_user label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 5px; /* Ajoute un espace entre le label et l'input */
+  color: var(--color-primary);
+}
+
+.choise_user input[type="text"] {
+  padding: 8px 15px;
+  width: 200px;
+  border: 2px solid #73a2ff;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+}
+
+.choise_user button {
+  margin-top: -15px;
+  padding: 6px 14px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary, #d80027) 0%,
+    #ff9933 100%
+  );
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+/*
+  ======================================================
+  SECTION card
+  ======================================================
+*/
+.card_game {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.game_area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 400px;
+  width: 80%;
+}
+
+.game_area img {
+  width: 100%;
+
+  /* Technique pour créer un carré parfait (height = width) */
+  aspect-ratio: 1 / 1;
+}
+
+/*
+  ======================================================
+   session presentation texte 
+  ======================================================
+*/
+
+.block {
+  margin: 10% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.block .texte {
+  color: white;
+}
+.block .texte h2 {
+  max-width: 310px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.block .texte p {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 200;
+}
+.block .texte button {
+  margin-top: 40px;
+  background-color: red;
+  padding: 6px 35px;
+  color: white;
+  font-size: 15px;
+  border: none;
+}
+.block img {
+  width: 450px;
+  border-radius: 8px;
+}
+
+/*
+  ======================================================
+  10. FOOTER (main-footer)
+  ======================================================
+*/
+.main-footer {
+  color: black;
+  background-color: white;
+  padding: 50px 35px;
+}
+
+.footer-content-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Pour le responsive */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1; /* Permet aux colonnes de prendre de l'espace */
+  min-width: 180px; /* Taille minimale pour ne pas avoir de colonnes trop serrées */
+}
+
+.footer-logo img {
+  max-height: 40px;
+  margin-bottom: 15px;
+}
+
+.col-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+
+.social-media-links {
+  display: flex;
+  gap: 15px;
+  /* Ajuster si le titre n'est pas nécessaire pour cette colonne */
+}
+
+.social-media-links a {
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-media-links a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: var(--spacing-md) auto 0 auto;
+  padding: 0 20px;
+}
+
+.footer-bottom hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: var(--spacing-sm) 0;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+}
